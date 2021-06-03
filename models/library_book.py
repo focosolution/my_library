@@ -30,11 +30,6 @@ class LibraryBook(models.Model):
     name = fields.Char('Title', required=True)
     short_name = fields.Char('Short Title', required=True)
     notes = fields.Text('Internal Notes')
-    state = fields.Selection(
-        [('draft', 'Not Available'),
-         ('available', 'Available'),
-         ('lost', 'Lost')],
-        'State', default="draft")
     description = fields.Html('Description', sanitize=True, strip_style=False)
     cover = fields.Binary('Book Cover')
     out_of_print = fields.Boolean('Out of Print?')
